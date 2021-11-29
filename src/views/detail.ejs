@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/style.css' type="text/css" />
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('layout/header'); -%>
+        <section class="body">
+          <div class="row">
+                <div class="col-md-4 col-sx-12 col-sm-12">
+                  <img src= <%= course.image%> />
+                   <p><%= course.name%></p>
+                 <p><%= course.desription%></p>
+              </div>    
+              </div>            
+        </section>
+  </div>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/style.css' type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+          <%- include('layout/header'); -%>
+          <section class="body">
+            <div class="row">
+              <%courses.forEach(course => {%>
+                  <div class="col-md-4 col-sx-12 col-sm-12">
+                    <a href="detail?p=<%= course.id%>">
+                    <img src= <%= course.image%> />
+                     <p><%= course.name%></p>
+                   <p><%= course.desription%></p>
+                  </a>
+                </div>             
+                 <% } ) %>
+            </div>
+
+          
+          </section>
+    </div>
+  </body>
+</html>
