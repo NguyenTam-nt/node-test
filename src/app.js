@@ -1,27 +1,38 @@
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
+const bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const connection = require("../Config/index");
+const cors = require("cors");
+const fileupload = require("express-fileupload");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+const router = require("./routes");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 var app = express();
+
+connection();
+app.use(cors());
+app.use(fileupload());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use("/stylesheets", express.static(__dirname + "/public/stylesheets"));
+app.use("/public", express.static(__dirname + "/public"));
 
 app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "src/public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+router(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,10 +1,15 @@
-var express = require("express");
-var router = express.Router();
+const users = require("./users");
+const post = require("./post");
+const opentimage = require("./openimage");
+const notify = require("./notify");
+const message = require("./message");
 
-const homeController = require("../../Controllers/homeController");
-
-/* GET home page. */
-router.get("/", homeController.index);
-router.get("/detail", homeController.Detail);
+const router = (app) => {
+  app.use("/users", users);
+  app.use("/posts", post);
+  app.use("/image", opentimage);
+  app.use("/notify", notify);
+  app.use("/message", message);
+};
 
 module.exports = router;

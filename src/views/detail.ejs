@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel='stylesheet' href='stylesheets/style.css' type="text/css" />
+    <%- include('layout/link', {title: "detail"}); -%>
 
-    <title>Document</title>
-</head>
+
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <%- include('layout/header'); -%>
         <section class="body">
           <div class="row">
-                <div class="col-md-4 col-sx-12 col-sm-12">
-                  <img src= <%= course.image%> />
+                <div class="col-md-8 col-sm-12">
+                    <iframe  src="https://www.youtube.com/embed/<%=course.videoId%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                    <p><%= course.name%></p>
                  <p><%= course.desription%></p>
               </div>    

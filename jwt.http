@@ -1,0 +1,30 @@
+GET http://localhost:3000
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ndXnhu4VuIGhvw6AiLCJpYXQiOjE2Mzg0MzQ3NTMsImV4cCI6MTYzODQzNDc4M30.1XJcyOmZXy6Mfc2X26ledt4av2JG-IVHVbxAZG98kJo
+
+###
+
+POST http://localhost:3000/users/add-user
+Content-Type: application/json
+
+{
+    "username": "nguyễn hoà", 
+    "email": "hoa253199@gmail.com",
+    "password": "1234567"
+}
+
+###
+
+POST http://localhost:3000/users/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ndXnhu4VuIGhvw6AiLCJpYXQiOjE2Mzg0MzM3MDgsImV4cCI6MTYzOTAzODUwOH0.URuo9GHp-DSJaOrG41JHdaQ12rmO7NBBcaQzZRSJ8Sw"
+}
+###
+
+POST http://localhost:3000/notify/accept-friend
+Content-Type: application/json
+
+{
+    "id": "1asdjkasdhaaskdja"
+}
