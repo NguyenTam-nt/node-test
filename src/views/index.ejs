@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <%- include('layout/link', {title: "nodejs"}); -%>
+
+  <body>
+    <div class="container">
+          <%- include('layout/header'); -%>
+          <section class="body">
+            <div class="row">
+              <%Courses.forEach(course => {%>
+                  <div class="col-md-4 col-sm-6">
+                    <a href="detail?p=<%= course.id%>">
+                    <img src= <%= course.image%> />
+                     <p><%= course.name%></p>
+                   <p><%= course.desription%></p>
+                  </a>
+                </div>             
+                 <% } ) %>
+            </div>
+
+          
+          </section>
+    </div>
+  </body>
+</html>

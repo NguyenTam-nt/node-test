@@ -1,0 +1,39 @@
+GET http://localhost:3000/posts?skip=0&limit=2
+ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhbTI1MzE5OUBnbWFpbC5jb20iLCJpYXQiOjE2NDg0NDg5OTYsImV4cCI6MTY0ODQ1MDc5Nn0.6eiWw_0pQ0WoDwm8uv5do-k6oDiFu2DBZUenZ9F6Y8I
+
+
+###
+POST http://localhost:3000/users/login-user
+Content-Type: application/json
+
+{
+    "email": "tam253199@gmail.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/users/add-user
+Content-Type: application/json
+
+{
+    "email": "tam253199@gmail.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/users/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ndXnhu4VuIGhvw6AiLCJpYXQiOjE2Mzg0MzM3MDgsImV4cCI6MTYzOTAzODUwOH0.URuo9GHp-DSJaOrG41JHdaQ12rmO7NBBcaQzZRSJ8Sw"
+}
+###
+
+POST http://localhost:3000/notify/accept-friend
+Content-Type: application/json
+
+{
+    "id": "1asdjkasdhaaskdja"
+}
